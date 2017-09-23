@@ -1,0 +1,24 @@
+clear all;close all;
+
+ x = [1,2;1,6;1,9;1,13];
+ y = [4;8;12;21]; 
+ % 根据公式 w = (x'*x)^-1  * x' * y
+ w = inv(x'*x)*x'*y
+ 
+ %% 在画板上绘制出数据集的点
+ figure(1);hold off
+ plot(x(:,2),y,'bo','markersize',5,'linewidth',2)
+ set(gca,'xtick',0:1:25)  
+
+ % 画布大小为25*25
+ xplot = [0 25];
+ yplot = [0 25];
+ xlim(xplot)
+ ylim(yplot)
+ hold on
+ % 打印出拟合的线段
+ plot(xplot,w(1,:)+w(2,:)*xplot,'r','linewidth',2)
+ set(gca,'yTick',1:1:25) 
+ set(gca,'xTick',1:1:25) 
+ xlabel('x');
+ ylabel('y');
