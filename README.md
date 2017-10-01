@@ -1,2 +1,2 @@
-# Pattern-Recognition
-The lesson of 
+# Mchine-Learning
+Coursera——Machine-Learning
